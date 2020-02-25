@@ -6,7 +6,12 @@ class App2 extends Component{
     
   this.state = {
     name: "Sajjad Bhojani",
+    }
+    this.handlerChange = this.handlerChange.bind(this)
   }
+
+  handlerChange = (event) => {
+    this.setState({name: event.target.value.toUpperCase()})
   }
     
   render() {
@@ -15,7 +20,8 @@ class App2 extends Component{
       <div>
         <form>
           <label>User Name (This is React code, Create constructor)</label>
-          <input type="" text value={this.state.name} />
+          <input type="" text value={this.state.name} onChange={this.handlerChange} />
+          <p>{this.state.name}</p>
           <br />
           <label>User Name (This is React code with default value)</label>
           <input type="" text defaulrtValue={this.state.name}/>

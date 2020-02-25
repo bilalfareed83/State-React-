@@ -4,7 +4,12 @@ class App extends Component{
   state = {
     name: "Bilal Fareed",
   }
-     
+  
+  handlerChange = (event) => {
+    this.setState({name: event.target.value.toLowerCase()})
+  }
+
+
   render() {
     console.log(this.state.name)
     return (
@@ -12,7 +17,8 @@ class App extends Component{
         <h1>Create state in class component React </h1>
         <form>
           <label>User Name (This is React code, Create constructor)</label>
-          <input type="" text value={this.state.name} />
+          <input type="" text value={this.state.name} onChange={this.handlerChange} />
+          <p>{this.state.name}</p>
           <br />
           <label>User Name (This is React code with default value)</label>
           <input type="" text defaulrtValue={this.state.name}/>
